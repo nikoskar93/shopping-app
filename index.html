@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Products</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container" id="products">
+      <div class="logout hidden" id="logout">Log Out</div>
+      <div class="buttons" id="signupBtns">
+        <button onclick="window.location.href = './pages/signup.html'" class="btn-sign">Sign Up</button>
+        <button onclick="window.location.href = './pages/login.html'" class="btn-sign">Log In</button>
+      </div>
+        
+        <h1>Our Products</h1>
+  <div class="products">
+    <div class="product">
+        <h2>Pizza</h2>
+        <div class="product-image" id="product1Img"></div>
+        <span class="price">€15.69</span>
+        <button id="addproduct1">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Burger</h2>
+        <div class="product-image" id="product2Img"></div>
+        <span class="price">€12.99</span>
+        <button id="addproduct2">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Gyros</h2>
+        <div class="product-image" id="product3Img"></div>
+        <span class="price">€4.99</span>
+        <button id="addproduct3">Add to Cart</button>
+      </div>
+      <div class="product">
+        <h2>Coffee</h2>
+        <div class="product-image" id="product4Img"></div>
+        <span class="price">€3.59</span>
+        <button id="addproduct4">Add to Cart</button>
+      </div>
+  </div>
+  <button id="viewCartBtn" class="btn">View Cart</button>
+    </div>
+  
+  <script type="module" src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up</title>
+    <link rel="stylesheet" href="../css/signup.css">
+</head>
+<body>
+    <div class="container-signup">
+        <h1>Sign Up</h1>
+    <div class="signup-form-container">
+        <form id="signup-form">
+          <div class="form-group">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required>
+          </div>
+          <div class="form-group">
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" required>
+          </div>
+          <div class="form-group">
+            <label for="password">Password</label>
+            <div class="input-group">
+                <input type="password" id="password" name="password" required>
+            <span class="show-password" onclick="showPassword('password')">Show</span>
+            </div>
+            
+          </div>
+          <div class="form-group">
+            <label for="password-confirm">Confirm Password</label>
+            <div class="input-group">
+                <input type="password" id="password-confirm" name="password-confirm" required>
+            <span class="show-password" onclick="showPassword('password-confirm')">Show</span>
+            </div>
+            
+          </div>
+          <div class="form-group">
+            <input type="submit" value="Sign Up">
+          </div>
+        </form>
+      </div>
+    </div> 
+    
+    <script src="../js/signup.js"></script>
+</body>
+</html>
