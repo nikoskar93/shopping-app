@@ -1,4 +1,25 @@
-import { products } from "./js/products-obj.js"
+import { products as prods } from "./js/products-obj.js"
+
+function createProductGrid(products) {
+  let productContainer = document.getElementById("productContainer");
+  let productGrid = document.createElement("div");
+  productGrid.classList.add("products");
+  for (let prod in prods) {
+    let product = prods[prod] 
+    let productDiv = document.createElement("div");
+    productDiv.classList.add("product");
+    productDiv.innerHTML = `
+      <h2>${product.name}</h2>
+      <div class="product-image" id="${prod}Img"></div>
+      <span class="price">${product.price} €</span>
+      <button class="add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
+    `;
+    productGrid.appendChild(productDiv);
+  };
+  productContainer.appendChild(productGrid);
+}
+
+createProductGrid()
 
 let currentUser = localStorage.getItem("currentUser");
 
@@ -26,9 +47,9 @@ if(currentUser) {
   })
 }
 
-  for (let product in products) {
+  for (let product in prods) {
     let imgId = product + "Img";
-    document.getElementById(imgId).style.backgroundImage = `url(${products[product].url})`
+    document.getElementById(imgId).style.backgroundImage = `url(${prods[product].url})`
   }
 
   let cart = {}
