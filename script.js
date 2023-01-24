@@ -12,7 +12,7 @@ function createProductGrid(products) {
       <h2>${product.name}</h2>
       <div class="product-image" id="${prod}Img"></div>
       <span class="price">${product.price} €</span>
-      <button class="add-to-cart-btn" data-product-id="${product.id}">Add to Cart</button>
+      <button class="add-to-cart-btn" id="add${prod}">Add to Cart</button>
     `;
     productGrid.appendChild(productDiv);
   };
@@ -54,11 +54,11 @@ if(currentUser) {
 
   let cart = {}
 
-  for (let product in products) {
+  for (let product in prods) {
     let addToCartBtn = document.getElementById("add" + product);
 
         addToCartBtn.addEventListener("click", function() {
-            addToCart(products[product])
+            addToCart(prods[product])
           });
 
   }
