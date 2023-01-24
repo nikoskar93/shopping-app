@@ -3,22 +3,16 @@ loginForm.addEventListener("submit", function(event) {
     event.preventDefault();
     let enteredValue = document.getElementById("email").value;
     let password = document.getElementById("password").value;
-    let users = JSON.parse(localStorage.getItem("users"));
-    for(let usr in users) {
-        let user = users[usr]
-        if((user.email === enteredValue || user.username === enteredValue) && user.password === password) {
-        
-            document.getElementById("email").value = ""
-            document.getElementById("password").value = ""
-    
-            alert("Log in successful!");
+    let users = JSON.parse(localStorage.getItem("users")) || [];
+    let foundUser = users.find(user => (user.username === enteredValue || 
+        user.email === enteredValue)  && user.password === password)
 
-            localStorage.setItem("currentUser", user.username);
-    
-            window.location.href = "../index.html"
-            
-        } else {
-            alert("Incorrect email or username or password. Please try again.");
-        }
-    } 
-});
+    if(foundUser) {
+        
+        localStorage.setItem("currentUser", foundUser.username);
+        alert('Login Successful!')
+        window.location.href = "../index.html";
+    } else {
+        alert("Invalid username or password");
+    }
+})
